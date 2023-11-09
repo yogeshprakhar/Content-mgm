@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Content</a>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br>
+            <h2>Create a new Content</h2>
+            <form method="post" action="/content/save" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" name="info[title]" type="text" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" name="info[description]" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image Link</label>
+                    <input class="form-control" name="info[image]" type="text" />
+                </div>
+                <button class="btn btn-dark">Add</button><br>
+                <br>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

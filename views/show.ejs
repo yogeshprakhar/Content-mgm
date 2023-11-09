@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar bg-primary sticky-top bg-light">
+        <div class="container-fluid ">
+            <a href="/content" class="navbar-brand">Blog</a>          
+        </div>
+    </nav>
+
+    <!-- show -->
+
+    <div class="container">
+        
+        <div class="card mb-3">
+            <img src="<%- info.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= info.title %></h5>
+                <p class="card-text"><%= info.description %>xcvxcv</p>
+            </div>
+        </div>
+        <form method="post" action="/content/delete/<%- info._id %>" >
+            <button>Delete</button>
+        </form>        
+    </div>
+
+    
+</body>
+</html>

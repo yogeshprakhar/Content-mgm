@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Content</title>
+    <style>
+        .card {
+            border: none !important;
+            margin: 7rem;
+            
+        }
+
+        .card-img-top {
+            border-radius: 1rem !important;
+            width: 100%;
+            object-fit: cover !important;
+        }
+
+        .card-body {
+            padding: 0 !important;
+        }
+
+        /* Card Effect */
+        .card-img-overlay {
+            opacity: 0;
+        }
+
+        .card-img-overlay:hover {
+            background-color: white;
+            opacity: 0.2;
+        }
+
+        /* View Image */
+        .show-img {
+            height: 30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar bg-body-tertiary sticky-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">All Blogs</a>
+            <form method="get" action="/content/new" class="d-flex">
+                <button class="btn btn-outline-success">Create new Content</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let info of allInfo){ %>
+            <a href="/content/<%- info._id %>" style="text-decoration: none;">
+                <div class="card col" style="width: 20rem">
+                    <img src="<%- info.image %>" class="card-img-top" alt="listing-image" style="height: 20rem;" />
+                    <div class="card-body">
+                        <h4 class="card-text">                         
+                            <%= info.title %>
+                        </h4>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </div>
+
+</body>
+
+</html>
